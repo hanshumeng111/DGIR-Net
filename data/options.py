@@ -10,7 +10,7 @@
 
 # def option():
 #     # Training settings
-#     parser = argparse.ArgumentParser(description='CIDNet')
+#     parser = argparse.ArgumentParser(description='DGIRNet')
 #     parser.add_argument('--batchSize', type=int, default=8, help='training batch size')
 #     parser.add_argument('--cropSize', type=int, default=256, help='image crop size (patch size)')
 #     parser.add_argument('--nEpochs', type=int, default=1000, help='number of epochs to train for end')
@@ -103,7 +103,7 @@ def _str2bool(v):
 
 def option():
     # Training settings
-    parser = argparse.ArgumentParser(description='CIDNet')
+    parser = argparse.ArgumentParser(description='DGIRNet')
     
     # 【修改点 1】Batch Size 保持 8 不变 (符合图片要求)
     parser.add_argument('--batchSize', type=int, default=8, help='training batch size')

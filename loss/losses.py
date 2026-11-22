@@ -272,7 +272,7 @@ class GateRegLoss(nn.Module):
         loss_gate_sparse = torch.tensor(0.0, device='cuda')
         loss_gate_tv = torch.tensor(0.0, device='cuda')
 
-        # 强大的兼容逻辑：兼容单张图，也兼容包含多个 LCA 门控的 List
+        # 强大的兼容逻辑：兼容单张图，也兼容包含多个 DGDI 门控的 List
         if gate_h2i is not None:
             if not isinstance(gate_h2i, (list, tuple)): gate_h2i = [gate_h2i]
             for g in gate_h2i:

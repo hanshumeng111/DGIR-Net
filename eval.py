@@ -6,7 +6,7 @@
 # # from torchvision import transforms
 # # from torch.utils.data import DataLoader
 # # from loss.losses import *
-# # from net.CIDNet import CIDNet
+# # from net.DGIRNet import DGIRNet
 
 
 # # def eval(model, testing_data_loader, model_path, output_folder,norm_size=True,LOL=False,v2=False,unpaired=False,alpha=1.0,gamma=1.0):
@@ -161,7 +161,7 @@
 # #         norm_size = False
 # #         weight_path = ep.unpaired_weights
         
-# #     eval_net = CIDNet().cuda()
+# #     eval_net = DGIRNet().cuda()
 # #     eval(eval_net, eval_data, weight_path, output_folder,norm_size=norm_size,LOL=ep.lol,v2=ep.lol_v2_real,unpaired=ep.unpaired,alpha=alpha,gamma=ep.gamma)
 
 # import os
@@ -172,7 +172,7 @@
 # from torchvision import transforms
 # from torch.utils.data import DataLoader
 # from loss.losses import *
-# from net.CIDNet import CIDNet
+# from net.DGIRNet import DGIRNet
 
 # def eval(model, testing_data_loader, model_path, output_folder,norm_size=True,LOL=False,v2=False,unpaired=False,alpha=1.0,gamma=1.0):
 #     torch.set_grad_enabled(False)
@@ -334,7 +334,7 @@
 #     if ep.model_path is not None:
 #         weight_path = ep.model_path
         
-#     eval_net = CIDNet().cuda()
+#     eval_net = DGIRNet().cuda()
 #     eval(eval_net, eval_data, weight_path, output_folder,norm_size=norm_size,LOL=ep.lol,v2=ep.lol_v2_real,unpaired=ep.unpaired,alpha=alpha,gamma=ep.gamma)
 
 import os
@@ -346,7 +346,7 @@ from data.data import *
 from torchvision import transforms
 from torch.utils.data import DataLoader
 from loss.losses import *
-from net.CIDNet import CIDNet
+from net.DGIRNet import DGIRNet
 
 def eval(model, testing_data_loader, model_path, output_folder,norm_size=True,LOL=False,v2=False,unpaired=False,alpha=1.0,gamma=1.0):
     torch.set_grad_enabled(False)
@@ -512,5 +512,5 @@ if __name__ == '__main__':
         weight_path = ep.model_path
         
     # 【修改5】移除网络的 .cuda()
-    eval_net = CIDNet()
+    eval_net = DGIRNet()
     eval(eval_net, eval_data, weight_path, output_folder,norm_size=norm_size,LOL=ep.lol,v2=ep.lol_v2_real,unpaired=ep.unpaired,alpha=alpha,gamma=ep.gamma)

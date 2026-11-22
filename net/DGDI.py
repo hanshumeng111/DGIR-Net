@@ -117,7 +117,7 @@ class IEL(nn.Module):
 
 from net.transformer_utils import LayerNorm  
 
-class HV_LCA(nn.Module):
+class HV_DGDI(nn.Module):
     def __init__(self, dim, num_heads, bias=False):
         super().__init__()
         self.gdfn = IEL(dim)
@@ -131,7 +131,7 @@ class HV_LCA(nn.Module):
         x = x + self.gdfn(self.norm(x))
         return x, g
 
-class I_LCA(nn.Module):
+class I_DGDI(nn.Module):
     def __init__(self, dim, num_heads, bias=False):
         super().__init__()
         self.norm = LayerNorm(dim)

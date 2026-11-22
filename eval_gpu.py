@@ -40,7 +40,7 @@ def run(args):
     import torch.nn.functional as F
     from PIL import Image
     from torchvision.transforms.functional import to_pil_image, to_tensor
-    from net.CIDNet import CIDNet
+    from net.DGIRNet import DGIRNet
 
     low = image_index(args.low_dir)
     gt = image_index(args.gt_dir) if args.gt_dir else None
@@ -53,7 +53,7 @@ def run(args):
     if device.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA unavailable. Install a CUDA-enabled PyTorch build or use --device cpu.")
     checkpoint = args.weights or ROOT / "weights" / f"{args.dataset}.pth"
-    model = CIDNet()
+    model = DGIRNet()
     model.load_state_dict(torch.load(checkpoint, map_location="cpu", weights_only=True), strict=True)
     model.eval().to(device)
     model.trans.gated = args.dataset == "lolv1"

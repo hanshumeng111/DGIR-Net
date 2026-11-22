@@ -1,6 +1,6 @@
 # DGIR-Net
 
-Evaluation code and pretrained weights for low-light image enhancement. The model is instantiated by the original class name `CIDNet` in `net/CIDNet.py`.
+Evaluation code and pretrained weights for low-light image enhancement. The model is instantiated as `DGIRNet` from `net/DGIRNet.py`. Checkpoints saved before the DGDI rename are supported automatically.
 
 ## Setup
 

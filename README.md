@@ -39,4 +39,14 @@ The default device is `cuda:0`. Use `--device cuda:1` to select another GPU. Omi
 | LOLv2-Real | 23.607 | 0.863 | 0.128 |
 | LOLv2-Synthetic | 26.116 | 0.941 | 0.044 |
 
-These values are transcribed from the manuscript. Independent reproduction requires the paired benchmark images and the matching checkpoint.
+## CPU evaluation of the released checkpoints
+
+Full test splits from the [data4LLIE mirror](https://huggingface.co/datasets/apeanut/data4LLIE) were evaluated with the commands above and `--device cpu` using PyTorch 2.15.0+cpu, torchvision 0.29.2+cpu and lpips 0.1.4.
+
+| Dataset | Pairs | PSNR (dB) | SSIM | LPIPS |
+| --- | ---: | ---: | ---: | ---: |
+| LOLv1 | 15 | 28.3243 | 0.8821 | 0.0723 |
+| LOLv2-Real | 100 | 23.6073 | 0.8635 | 0.1281 |
+| LOLv2-Synthetic | 100 | 25.7983 | 0.9362 | 0.0475 |
+
+The synthetic split scored 0.318 dB lower than the manuscript value with the epoch-120 checkpoint. On three images from each LOLv2 split, the released entry point and the original CPU evaluator produced identical 8-bit RGB predictions. The difference on the synthetic split has not been resolved. CUDA execution has not been independently verified in this run.

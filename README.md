@@ -14,7 +14,12 @@ python -c "import torch; print(torch.cuda.is_available())"
 The second command should print `True` for GPU testing. On the first paired evaluation, LPIPS needs torchvision's pretrained AlexNet weights in the torch hub cache or network access to download them.
 ## Datasets
 
-The paired evaluation datasets are available separately from Baidu Netdisk: vhttps://pan.baidu.com/s/1WEFStozl27mmQTsjd6y-3w?pwd=uqhk 提取码: uqhk
+The paired evaluation datasets can be downloaded from [Baidu Netdisk](https://pan.baidu.com/s/1WEFStozl27mmQTsjd6y-3w?pwd=uqhk).
+
+Extraction code: `uqhk`.
+
+After downloading, extract the `datasets` folder into the repository root.
+
 ## Evaluate
 
 Point the two directory arguments to the actual folders containing the low-light images and their reference images. Each output directory must be new or empty. Benchmark data are supplied separately by the user.

@@ -1,0 +1,8 @@
+torch>=2.1
+torchvision
+einops
+huggingface_hub>=0.23
+numpy
+Pillow
+opencv-python-headless
+lpips

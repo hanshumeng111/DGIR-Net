@@ -23,19 +23,4 @@ python eval_gpu.py --dataset lolv2-real --low-dir /data/LOLv2/Real_captured/Test
 python eval_gpu.py --dataset lolv2-syn --low-dir /data/LOLv2/Synthetic/Test/Low --gt-dir /data/LOLv2/Synthetic/Test/Normal --output-dir results/lolv2-syn
 ```
 
-The default device is `cuda:0`. Use `--device cuda:1` to select another GPU. Omit `--gt-dir` for inference only. Each preset automatically selects the matching checkpoint. Predictions are written as RGB PNG files. Paired tests print the number of matched images and the mean of per-image PSNR, RGB SSIM and AlexNet LPIPS. The LOLv1 GT Mean correction is applied to the 8-bit predictions for scoring only. The saved predictions do not use reference data.
-
-| Preset | File under weights/  |
-| --- | --- |
-| lolv1 | lolv1.pth |
-| lolv2-real | lolv2-real.pth| 
-| lolv2-syn | lolv2-syn.pth | 
-
-## Results reported in the manuscript
-
-| Dataset | PSNR (dB) | SSIM | LPIPS |
-| --- | ---: | ---: | ---: |
-| LOLv1 | 28.325 | 0.882 | 0.072 |
-| LOLv2-Real | 23.607 | 0.863 | 0.128 |
-| LOLv2-Synthetic | 26.116 | 0.941 | 0.044 |
 
